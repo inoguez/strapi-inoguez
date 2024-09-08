@@ -1357,10 +1357,10 @@ export interface ApiWorkWork extends Schema.CollectionType {
     };
   };
   attributes: {
-    showcase: Attribute.Media &
+    portrait: Attribute.Media &
       Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     title: Attribute.String &
@@ -1412,6 +1412,12 @@ export interface ApiWorkWork extends Schema.CollectionType {
       'manyToMany',
       'api::technology.technology'
     >;
+    showcase: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
